@@ -29,11 +29,19 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
-          },
+           
+           "styles": [
+            "node_modules/bootstrap/dist/css/bootstrap.min.css",
+            "node_modules/sal.js/dist/sal.css",
+            "./node_modules/slick-carousel/slick/slick.css",
+            "./node_modules/slick-carousel/slick/slick-theme.css",
+            "src/styles.scss"
+          ],
+          "scripts": [
+            "node_modules/jquery/dist/jquery.min.js",
+            "node_modules/slick-carousel/slick/slick.min.js"
+          ]
+        },
           "configurations": {
             "production": {
               "budgets": [
@@ -100,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e0c9a734-f63b-439e-90e2-0c218a9c9ce3"
   }
 }
