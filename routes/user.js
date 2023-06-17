@@ -164,7 +164,34 @@ router.put("/:id", (req, res) => {
         });
 });
 
-//----------------------------------------------------
+//------------------------------------------- get user by id ---------------------------------
+
+router.get("/:id", (req, res) => {
+    console.log('Here in get user by id', req.params.id_user);
+    const id = req.params.id_user;
+
+    client.query(
+        `Select * from public."User" where "id_user" = $1 `,
+        [id],
+        (err, results) => {
+
+            console.log('user :\n', results.rows);
+            if (results.rows.length > 0) {
+                console.log('get the user');
+                res.status(200).json({
+                    message: "1", // Existent user !
+                    user: results.rows
+                });
+            }
+            else {
+                console.log('user not defined !');
+                res.status(200).json({
+                    message: "0" // !Existent user 
+                });
+            }
+
+        });
+});
 
 
 
